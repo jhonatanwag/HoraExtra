@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="imc.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Altura</ion-label>
+      <ion-input type="number" (ngModelChange)="imc.altura = converterNumber($event)" [(ngModel)]="imc.altura"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Peso</ion-label>
+      <ion-input type="number" (ngModelChange)="imc.peso = converterNumber($event)" [(ngModel)]="imc.peso"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full round (click)="cadastrarImc()">
+    Cadastrar Imc</button>
+
+    <ion-list>
+      <ion-item *ngFor="let im of items | async" (click)="editarRemover(im)">
+        <h3>{{im.nome}}</h3>
+        <h3>{{im.altura}}</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content>

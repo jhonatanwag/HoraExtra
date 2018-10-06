@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button full round (click)='chamarDetalhesSemParametros()'>Detalhes Sem Parametros</button>
+  <button ion-button full round (click)='chamarDetalhesComParametros()'>Detalhes Com Parametros</button>
+  <button ion-button full round (click)='definirDetalhesRaiz()'>Detalhe como Raiz</button>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="imc.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Altura</ion-label>
+      <ion-input type="number" (ngModelChange)="imc.altura = converterNumber($event)" [(ngModel)]="imc.altura"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Peso</ion-label>
+      <ion-input type="number" (ngModelChange)="imc.peso = converterNumber($event)" [(ngModel)]="imc.peso"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+<button ion-button full round (click)='cadastrarImc()'>Cadastrar</button>
+
+</ion-content>

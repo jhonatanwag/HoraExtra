@@ -1,0 +1,7 @@
+{
+  "name": "appFuturo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

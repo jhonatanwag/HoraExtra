@@ -1,0 +1,24 @@
+<!--
+  Generated template for the DetalhesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detalhes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+<ion-list>
+ <ion-item *ngFor="let imc of icms">
+  <h2>{{imc.nome}}</h2>
+  <h3>{{imc.peso}}</h3>
+ </ion-item>
+</ion-list>
+
+<button ion-button full round (click)='fecharDetalhes()'>Fechar</button>
+</ion-content>

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the EditarHoraPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>editar-hora</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="hora.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Data</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="hora.data"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Salário Base</ion-label>
+      <ion-input type="number" (ngModelChange)="hora.salario = converterNumber($event)" [(ngModel)]="hora.salario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Jornada de Trabalho (Hora/Mês)</ion-label>
+      <ion-input type="number" (ngModelChange)="hora.jornada = converterNumber($event)" [(ngModel)]="hora.jornada"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Hora</ion-label>
+      <ion-select [(ngModel)]="hora.tipoHora">
+        <ion-option value="50">50%</ion-option>
+        <ion-option value="100">100%</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Quantidade de Hora no Dia</ion-label>
+      <ion-input type="number" (ngModelChange)="hora.qtdHora = converterNumber($event)" [(ngModel)]="hora.qtdHora"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full round (click)="alterarHora()">
+    Alterar Hora Extra</button>
+
+  <button ion-button full round (click)="removerHora()">
+      Remover Hora</button>
+
+</ion-content>

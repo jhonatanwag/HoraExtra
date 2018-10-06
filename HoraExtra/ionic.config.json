@@ -1,0 +1,7 @@
+{
+  "name": "HoraExtra",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
